@@ -458,6 +458,172 @@ header button:hover{
     transform: scale(1.05);
 }
 
+/* POPUP */
+.popup-overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+    z-index: 2000;
+}
+
+.popup-overlay.active{
+    opacity: 1;
+    visibility: visible;
+}
+
+.contenido-popup{
+    display: flex;
+    background: #ffff;
+    width: 800px;
+    height: 750px;
+    border-radius: 20px;
+    margin: 60px 25%;
+
+    transform: scale(0.8);
+    opacity: 0;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.popup-overlay.active .contenido-popup{
+    transform: scale(1);
+    opacity: 1;
+}
+
+.cerrar-popup{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    border: none;
+    background: #ffc3c5;
+    color: #ED585E;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.cerrar-popup:hover{
+    background: #ED585E;
+    color: #ffc3c5;
+    transition: 0.3s;
+}
+
+.badge{
+    background: #C6E7FF;
+    color: #2097C2;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+.popup-info{
+    padding: 40px;
+    width: 60%;
+    max-height: 750px;
+    overflow-y: auto;
+}
+
+.popup-info::-webkit-scrollbar{
+    width: 6px;
+}
+
+.popup-info::-webkit-scrollbar-thumb{
+    background: #EEF5F6;
+    border-radius: 10px;
+}
+
+.popup-info h2{
+    margin: 15px 0;
+    color: #2097C2;
+}
+
+.popup-info p{
+    font-size: 15px;
+    color: #555;
+    line-height: 1.6;
+}
+
+.popup-detalles{
+    margin: 20px 0;
+}
+
+.popup-detalles div{
+    background: #EEF5F6;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.popup-detalles div:hover{
+    transform: translateX(6px);
+    transition: 0.4s;
+}
+
+.popup-detalles div p{
+    padding: 0 5px;
+}
+
+#popupDescripcion{
+    white-space: pre-line;
+    text-align: justify;
+}
+
+.incluye{
+    background: #EFFBFE;
+    margin-top: 10px;
+    border-radius: 20px;
+    padding: 15px;
+}
+
+.incluye h4{
+    color: #2097C2;
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.incluye li{
+    list-style: none;
+    margin-bottom: 6px;
+}
+
+.popup-img{
+    width: 40%;
+    position: relative;
+}
+
+.popup-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0 20px 20px 0;
+}
+
+.overlay-texto{
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: #ffff;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+
+
 /* TALLERES */
 #talleres{
     display: flex;

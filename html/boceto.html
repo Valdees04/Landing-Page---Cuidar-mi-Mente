@@ -151,7 +151,23 @@
                         <p>👥 Aforo de 12 personas</p>
                     </div>
 
-                    <a href="#"><button>Ver más</button></a>
+                    <button class="btn-ver-mas"
+                            data-titulo="¡Hola!🧠"
+                            data-descripcion="Gracias por interesarte en nuestro taller de manejo emocional 🫂 “Tu Kit de Calma” 
+                            
+                            En el taller realizaremos diferentes actividades 🤗 con el fin de que puedas llevarte tu propio Botiquín Emocional con herramientas que te puedan ayudar a gestionar tus emociones de una forma sana para ti 🍃. 
+                            
+                            Adicionalmente, podrás compartir con otras personas que están en el mismo viaje que tú 🥳 y podrás disfrutar de una deliciosa comida  🥐☕. "
+                            data-lugar="Rodson Coffee - Carrera 20 #53-35 Teusaquillo, Bogotá"
+                            data-fecha="18 de abril del 2026"
+                            data-hora="9:00 am"
+                            data-duracion ="Duración aproximada: 2 horas y media."
+                            data-aforo="12 personas"
+                            data-precio="$85.000 COP"
+                            data-img="../img/img-popup-taller-kitdecalma.jpeg"
+                            data-incluye="✅ Materiales para crear tu botiquín emocional personalizado.,✅ Guías de identificación y gestión emocional.,✅ Acompañamiento psicológico durante todo el taller.,✅ Refrigerio."
+                            >Ver más
+                    </button>
                 </div>
             </div>
 
@@ -170,14 +186,76 @@
                         <p>👥 Aforo de 15 personas</p>
                     </div>
 
-                    <a href="#"><button>Ver más</button></a>
+                    <button class="btn-ver-mas"
+                            data-titulo="Vínculos sociales"
+                            data-descripcion="Descipción de taller de vínculos sociales"
+                            data-lugar="Por definir"
+                            data-fecha="Por definir"
+                            data-hora="Por definir"
+                            data-duracion ="Duración aproximada: Por definir"
+                            data-aforo="15 personas"
+                            data-precio="Por definir"
+                            data-img="../img/img-popup-taller-vinculosocial.jpeg"
+                            data-incluye="✅ Materiales para crear tu botiquín emocional personalizado.,✅ Guías de identificación y gestión emocional.,✅ Acompañamiento psicológico durante todo el taller.,✅ Refrigerio."
+                            >Ver más
+                    </button>
                 </div>
 
                 
             </div>
         </div>
-
     </section>
+
+    <!-- POP UP -->
+    <div class="popup-overlay" id="popup">
+        <div class="contenido-popup">
+            
+            <!-- izquierda -->
+            <div class="popup-info">
+                <span class="badge">TALLER ESPECIAL</span>
+                <h2 id="popupTitulo">Título</h2>
+                <p id="popupDescripcion"></p>
+
+                <div class="popup-detalles">
+                    <div>
+                        <strong>📍Lugar</strong>
+                        <p id="popupLugar"></p>
+                    </div>
+                    <div>
+                        <strong>📅Fecha</strong>
+                        <p id="popupFecha"></p>
+                    </div>
+                    <div>
+                        <strong>⏰Hora</strong>
+                        <p id="popupHora"></p>
+                    </div>
+                    <div>
+                        <strong>👥Aforo</strong>
+                        <p id="popupAforo"></p>
+                    </div>
+                    <div>
+                        <strong>💰Valor</strong>
+                        <p id="popupPrecio"></p>
+                    </div>
+                </div>
+
+                <div class="incluye">
+                    <h4>¿Qué incluye este taller?</h4>
+                    <ul id="popupIncluye"></ul>
+                </div>
+            </div>
+            <!-- derecha -->
+            <div class="popup-img">
+                <!-- btn cerrar -->
+                <button class="cerrar-popup" id="cerrarPopup">✖</button>
+                <img id="popupImagen">
+                <div class="overlay-texto">
+                    <p>Un momento de pausa para tu mente.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
 
     <!-- TESTIMONIOS -->
     <section id="testimonios">
