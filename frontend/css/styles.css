@@ -1,0 +1,13 @@
+@import "base.css";
+@import "sections/header.css";
+@import "sections/inicio.css";
+@import "sections/about.css";
+@import "sections/servicios.css";
+@import "sections/profesionales.css";
+@import "sections/talleres.css";
+@import "sections/testimonios.css";
+@import "sections/contacto.css";
+@import "sections/popups.css";
+@import "sections/footer.css";
+@import "sections/whatsapp.css";
+@import "sections/responsive.css";

@@ -1,0 +1,459 @@
+/* HAMBURGER MENU */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 22px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1000;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, #2097c2, #047fb0);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(7px, 7px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* RESPONSIVE POPUP TALLERES */
+@media (max-width: 1024px) {
+  .contenido-popup {
+    width: 90%;
+    margin: 20px 5%;
+    height: auto;
+    max-height: 90vh;
+    flex-direction: row;
+    border-radius: 20px;
+  }
+
+  .popup-info {
+    width: 55%;
+    padding: 20px;
+  }
+
+  .popup-info h2 {
+    font-size: 20px;
+    margin: 10px 0;
+  }
+
+  .popup-info p {
+    font-size: 13px;
+  }
+
+  .popup-detalles {
+    margin: 15px 0;
+  }
+
+  .popup-detalles div {
+    padding: 8px;
+    margin-bottom: 8px;
+  }
+
+  .popup-detalles div p {
+    font-size: 12px;
+  }
+
+  .incluye {
+    padding: 10px;
+    margin-top: 8px;
+  }
+
+  .incluye h4 {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+
+  .incluye li {
+    font-size: 12px;
+    margin-bottom: 4px;
+  }
+
+  .popup-img {
+    width: 45%;
+    height: auto;
+  }
+
+  .popup-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0 20px 20px 0;
+  }
+
+  .badge {
+    font-size: 10px;
+    padding: 4px 8px;
+  }
+
+  .cerrar-popup {
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .menu-toggle {
+    display: flex !important;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    left: auto;
+    right: -100%;
+    width: 280px;
+    max-width: 80%;
+    height: 100vh;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    padding: 60px 20px;
+    box-shadow: -5px 0 30px rgba(0, 0, 0, 0.1);
+    transition: right 0.3s ease;
+    z-index: 998;
+    list-style: none;
+  }
+
+  .nav-links.active {
+    left: auto;
+    right: 0;
+  }
+
+  .nav-links li {
+    display: block;
+    text-align: center;
+    width: 100%;
+  }
+
+  .nav-links a {
+    font-size: 18px;
+    display: block;
+    padding: 10px;
+  }
+
+  .header-btn {
+    display: none;
+  }
+
+  header {
+    padding: 10px 5%;
+    height: auto;
+    min-height: 80px;
+  }
+
+  header.scrolled {
+    height: auto;
+    min-height: 80px;
+    padding: 10px 5%;
+  }
+
+  header.scrolled .header-logo img,
+  .header-logo img {
+    height: 60px;
+    width: auto;
+  }
+
+  #inicio {
+    padding: 100px 5% 40px;
+    flex-direction: column-reverse;
+    gap: 20px;
+  }
+
+  .contenido-inicio {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .titulo-inicio {
+    font-size: 32px;
+  }
+
+  .imagen-container img {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  #talleres {
+    padding: 60px 5%;
+  }
+
+  .taller {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .taller-img {
+    width: 100%;
+    border-radius: 20px;
+  }
+
+  .taller-img img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .taller-info {
+    width: 100%;
+  }
+
+  .taller.reverse .taller-img {
+    order: 0;
+  }
+
+  .tarjetas-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .tarjetas-servicios {
+    padding: 20px;
+  }
+
+  #aboutUs {
+    flex-direction: column;
+    padding: 60px 5%;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .imagenes-aboutUs {
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .imagenes-aboutUs img:first-child {
+    margin-top: 0;
+  }
+
+  .imagenes-aboutUs img:last-child {
+    margin-bottom: 0;
+  }
+
+  .contenido-aboutUs {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .logos-aboutUs {
+    justify-content: center;
+  }
+
+  .titulo-aboutUs {
+    font-size: 28px;
+  }
+
+  .descripcion-aboutUs {
+    font-size: 16px;
+  }
+
+  .testimonios-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-self: center;
+  }
+
+  #contactanos {
+    flex-direction: column;
+    padding: 60px 5%;
+    text-align: center;
+  }
+
+  .contactos-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .tarjeta-contacto {
+    height: auto;
+    padding: 15px;
+  }
+
+  .imagen-contactanos {
+    margin-left: 0;
+    margin-top: 30px;
+  }
+
+  .imagen-contactanos img {
+    width: 100%;
+  }
+
+  footer .footer-logo img {
+    height: 50px;
+  }
+
+  footer h1 {
+    font-size: 16px;
+  }
+
+  .contenido-popup-servicios {
+    width: 95%;
+    padding: 25px 20px;
+  }
+
+  .popup-servicios-titulo {
+    font-size: 24px;
+  }
+
+  .popup-servicios-descripcion {
+    font-size: 14px;
+  }
+
+  .popup-servicios-btn {
+    padding: 12px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    flex-wrap: wrap;
+  }
+
+  header .header-logo h1 {
+    display: none;
+  }
+
+  header .header-logo img {
+    height: 40px;
+  }
+
+  header button {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  #inicio {
+    padding: 100px 5% 30px;
+  }
+
+  .titulo-inicio {
+    font-size: 26px;
+  }
+
+  .titulo-aboutUs {
+    font-size: 24px;
+  }
+
+  .titulo-testimonios {
+    font-size: 26px;
+  }
+
+  .contenido-contactanos h3 {
+    font-size: 26px;
+  }
+
+  .imagenes-aboutUs {
+    grid-template-columns: 1fr;
+    justify-content: center;
+    width: 100%;
+    max-width: 500px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-profesionales h3 {
+    font-size: 28px;
+  }
+
+  .carrusel-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+
+  .card-profesional {
+    min-width: 240px;
+  }
+
+  .card-profesional-img {
+    height: 280px;
+  }
+
+  .popup-profesional-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .popup-profesional-foto {
+    min-height: 300px;
+    max-height: 350px;
+  }
+
+  .popup-profesional-datos {
+    padding: 25px;
+  }
+
+  .popup-profesional-info-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-profesionales {
+    padding: 40px 20px 30px;
+  }
+
+  .header-profesionales h3 {
+    font-size: 24px;
+  }
+
+  .header-profesionales p {
+    font-size: 16px;
+  }
+
+  .carrusel-btn {
+    display: none;
+  }
+
+  .card-profesional {
+    min-width: 260px;
+  }
+
+  .card-profesional-img {
+    height: 300px;
+  }
+
+  .popup-profesional-datos h2 {
+    font-size: 22px;
+  }
+
+  .popup-profesional-datos {
+    padding: 20px;
+  }
+
+  .carrusel-indicadores {
+    display: none;
+  }
+}

@@ -1,0 +1,89 @@
+/* SOBRE NOSOTROS */
+#aboutUs {
+  background-color: #eef5f6;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 80px 10%;
+}
+
+.imagenes-aboutUs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.imagenes-aboutUs img {
+  width: 365px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.imagenes-aboutUs img:first-child {
+  margin-top: 40px;
+}
+.imagenes-aboutUs img:last-child {
+  margin-bottom: 40px;
+}
+
+.contenido-aboutUs {
+  max-width: 600px;
+}
+
+.contenido-aboutUs h3 {
+  display: inline-block;
+  background-color: #c6e7ff;
+  color: #2097c2;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 14px;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+.titulo-aboutUs {
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.descripcion-aboutUs {
+  font-size: 20px;
+  color: #3f484f;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.logos-aboutUs {
+  display: grid;
+  gap: 20px;
+}
+
+.logos-aboutUs svg {
+  color: #ed585e;
+  width: 40px;
+  height: 40px;
+}
+
+.descripcion-logos-aboutUs {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.descripcion-logos-aboutUs h2 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.descripcion-logos-aboutUs p {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.descripcion-logos-aboutUs div {
+  display: flex;
+  flex-direction: column;
+}
