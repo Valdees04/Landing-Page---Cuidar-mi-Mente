@@ -1,0 +1,124 @@
+/* INICIO */
+#inicio {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 80px 10%;
+  gap: 50px;
+  background-color: #f4fbfb;
+  margin-top: 100px;
+
+  .contenido-inicio {
+  max-width: 600px;
+
+  h3 {
+    display: inline-block;
+    background-color: #ffdad7;
+    color: #ed585e;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+  }
+
+  .titulo-inicio {
+    font-size: 55px;
+    font-weight: 700;
+    color: #2097c2;
+    margin-bottom: 20px;
+  }
+
+  .descripcion-inicio {
+  font-size: 20px;
+  color: #3f484f;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+  a {
+    text-decoration: none;
+  }
+
+  .btn-action {
+    padding: 12px 24px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    margin-right: 10px;
+    transition: 0.3s;
+    margin-bottom: 30px;
+    display: inline-block;
+    text-align: center;
+    
+    /* botón rojo */
+    &:first-of-type {
+      background: linear-gradient(to right, #c84346, #ed585e);
+      color: #ffff;
+
+      &:hover{
+        transform: scale(1.05);
+      }
+    }
+
+    /* botón outline */
+    &:last-of-type {
+      background-color: transparent;
+      border: 1px solid rgba(32, 151, 194, 0.5);
+      color: #2097c2;
+
+      &:hover{
+        transform: scale(1.05);
+      }
+    }
+  }
+}
+}
+
+
+
+
+
+.imagen-container {
+  position: relative;
+
+  img{
+    width: 600px;
+    border-radius: 20px;
+    object-fit: cover;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  .carta-flotante {
+    position: absolute;
+    bottom: 25px;
+    right: -80px;
+    background: #ffff;
+    border-radius: 15px;
+    padding: 12px 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    
+    .icono-inicio {
+      background: #ffdad7;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+    }
+    
+    .titulo-card {
+      font-size: 16px;
+      font-weight: 600;
+
+      &:span{
+        font-size: 14px;
+      }
+    }
+  }
+}

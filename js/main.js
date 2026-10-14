@@ -23,6 +23,10 @@ if (menuToggle && navLinks) {
         if (targetElement) {
           e.preventDefault();
 
+          // Activar visualmente de inmediato el enlace pulsado
+          navLinksItems.forEach((l) => l.classList.remove("active"));
+          this.classList.add("active");
+
           const header = document.querySelector("header");
           const headerHeight = header ? header.offsetHeight : 100;
           const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
@@ -104,8 +108,6 @@ document.addEventListener("DOMContentLoaded", () => {
         li.textContent = item;
         lista.appendChild(li);
       });
-
-      
 
       popupServicios.classList.add("active");
       document.body.classList.add("no-scroll");
@@ -261,25 +263,42 @@ popupProfesional.addEventListener("click", (e) => {
 
 // Scrollspy - detectar sección activa
 const sections = document.querySelectorAll("section[id]");
-const navLinksItems = navLinks.querySelectorAll("a");
+const navLinksItems = navLinks ? navLinks.querySelectorAll("a") : [];
 
 function highlightNav() {
   const scrollY = window.pageYOffset;
+  const headerHeight = header ? header.offsetHeight : 100;
+  let currentSectionId = "";
 
+  // recorrer las secciones para detectamos en cuál se encuentra el scroll
   sections.forEach((section) => {
+    const sectionTop = section.offsetTop - headerHeight - 20;
     const sectionHeight = section.offsetHeight;
-    const sectionTop = section.offsetTop - 100;
-    const sectionId = section.getAttribute("id");
 
-    if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-      navLinksItems.forEach((link) => {
-        link.classList.remove("active");
-        if (link.getAttribute("href") === "#" + sectionId) {
-          link.classList.add("active");
-        }
-      });
+    if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+      currentSectionId = section.getAttribute("id");
     }
+  });
+
+  // cuando el usuario llegue al final de la página, activar la última sección
+  if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 50) {
+    const lastSection = sections[sections.length - 1];
+    if (lastSection) currentSectionId = lastSection.getAttribute("id");
+  }
+
+  // 3. Si está arriba del todo, activar la primera sección por defecto (#inicio)
+  if (!currentSectionId && sections.length > 0) {
+    currentSectionId = sections[0].getAttribute("id");
+  }
+
+  // 4. Actualizamos la clase 'active' en los enlaces correspondientes
+  navLinksItems.forEach((link) => {
+    link.classList.toggle("active", link.getAttribute("href") === "#" + currentSectionId);
   });
 }
 
+// Ejecutar al cargar la página para activar 'Inicio' de inmediato
+highlightNav();
+
+// Ejecutar en cada movimiento del scroll
 window.addEventListener("scroll", highlightNav);
