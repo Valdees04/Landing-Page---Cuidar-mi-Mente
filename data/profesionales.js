@@ -3,7 +3,7 @@ const profesionalesData = [
     id: 1,
     nombre: "Angie Valdés",
     cargo: "Especialista en psicología clínica",
-    foto: "../img/profesionales/foto-angie.jpeg",
+    foto: "img/profesionales/foto-angie.jpeg",
     experiencia: "5 años de experiencia",
     publico: "Adultos, adolescentes y parejas",
     especialidades: "Ansiedad, depresión, duelo, autoestima, regulación emocional, habilidades sociales, entre otros.",
@@ -18,7 +18,7 @@ const profesionalesData = [
     id: 2,
     nombre: "Paula Ronderos",
     cargo: "Especialista en psicología clínica",
-    foto: "../img/profesionales/foto-paula.png",
+    foto: "img/profesionales/foto-paula.png",
     experiencia: "5 años de experiencia",
     publico: "Adultos, adolescentes y parejas",
     especialidades:
@@ -34,7 +34,7 @@ const profesionalesData = [
     id: 3,
     nombre: "Martha Gonzalez",
     cargo: "Psicóloga",
-    foto: "../img/profesionales/foto-martha.png",
+    foto: "img/profesionales/foto-martha.png",
     experiencia: "4 años de experiencia",
     publico: "Niños, adolescentes, adultos, parejas y familias",
     especialidades:
@@ -50,7 +50,7 @@ const profesionalesData = [
     id: 4,
     nombre: "Alexander Gonzalez",
     cargo: "Psicólogo",
-    foto: "../img/profesionales/foto-alexander.png",
+    foto: "img/profesionales/foto-alexander.png",
     experiencia: "6 años de experiencia",
     publico: "Adultos, adolescentes y parejas",
     especialidades:
@@ -66,7 +66,7 @@ const profesionalesData = [
     id: 5,
     nombre: "Diana Cortés",
     cargo: "Psicóloga",
-    foto: "../img/profesionales/foto-diana.jpeg",
+    foto: "img/profesionales/foto-diana.jpeg",
     experiencia: "8 años de experiencia",
     publico: "Adolescentes, Adultos y parejas",
     especialidades:
@@ -82,7 +82,7 @@ const profesionalesData = [
     id: 6,
     nombre: "Marcela Tamayo",
     cargo: "Psicóloga",
-    foto: "../img/profesionales/foto-marcela.jpeg",
+    foto: "img/profesionales/foto-marcela.jpeg",
     experiencia: "2 años y medio de experiencia",
     publico: "Adolescentes, Adultos y parejas",
     especialidades:
@@ -98,7 +98,7 @@ const profesionalesData = [
     id: 7,
     nombre: "Laura Guevara",
     cargo: "Psicóloga",
-    foto: "../img/profesionales/foto-laura.jpeg",
+    foto: "img/profesionales/foto-laura.jpeg",
     experiencia: "3 años de experiencia",
     publico: "Adolescentes, Adultos y parejas",
     especialidades:

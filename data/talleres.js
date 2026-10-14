@@ -10,7 +10,7 @@ const talleresData = [
         "duracion": "Duración aproximada: 2 horas y media.",
         "aforo": "12 personas",
         "precio": "$85.000 COP",
-        "imagen": "../img/img-popup-taller-kitdecalma.jpeg",
+        "imagen": "img/img-popup-taller-kitdecalma.jpeg",
         "incluye": [
             "✅ Materiales para crear tu botiquín emocional personalizado.",
             "✅ Guías de identificación y gestión emocional.",
@@ -30,7 +30,7 @@ const talleresData = [
         "duracion": "Duración aproximada: Por definir",
         "aforo": "15 personas",
         "precio": "Por definir",
-        "imagen": "../img/img-popup-taller-vinculosocial.jpeg",
+        "imagen": "img/img-popup-taller-vinculosocial.jpeg",
         "incluye": [
             "✅ Por definir."
         ]
@@ -47,7 +47,7 @@ const talleresData = [
         "duracion": "Duración aproximada: Por definir",
         "aforo": "Por definir",
         "precio": "Por definir",
-        "imagen": "../img/img-popup-taller-vinculosocial.jpeg",
+        "imagen": "img/img-popup-taller-vinculosocial.jpeg",
         "incluye": [
             "✅ Por definir."
         ]
