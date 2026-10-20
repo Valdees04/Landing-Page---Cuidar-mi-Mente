@@ -48,3 +48,12 @@ footer {
     }
   }
 }
+
+@media (max-width: 768px) {
+  footer {
+    flex-direction: column;
+    height: auto;
+    padding: 20px;
+    gap: 15px;
+  }
+}

@@ -157,9 +157,21 @@
     padding: 10px;
   }
 
-  .header-btn {
-    display: none;
+  /* Ocultar botón en móvil por defecto */
+  .btn-action {
+    display: none !important;
   }
+
+  /* Mostrar botón cuando el menú está activo */
+  .btn-action.active {
+    display: inline-block !important;
+    position: absolute;
+    bottom: 20px;
+    right: 50%;
+    transform: translateX(50%);
+  }
+
+
 
   header {
     padding: 10px 5%;
@@ -245,18 +257,9 @@
   }
 
   .imagenes-aboutUs {
-    grid-template-columns: repeat(2, 1fr);
-    justify-content: center;
+    grid-template-columns: 1fr;
     width: 100%;
     max-width: 500px;
-  }
-
-  .imagenes-aboutUs img:first-child {
-    margin-top: 0;
-  }
-
-  .imagenes-aboutUs img:last-child {
-    margin-bottom: 0;
   }
 
   .contenido-aboutUs {
@@ -283,6 +286,7 @@
     justify-self: center;
   }
 
+  /* Contacto */
   #contactanos {
     flex-direction: column;
     padding: 60px 5%;
@@ -290,8 +294,7 @@
   }
 
   .contactos-container {
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
     gap: 15px;
   }
@@ -299,15 +302,23 @@
   .tarjeta-contacto {
     height: auto;
     padding: 15px;
+    width: 100% !important;
   }
 
   .imagen-contactanos {
-    margin-left: 0;
-    margin-top: 30px;
+    display: none;
   }
 
-  .imagen-contactanos img {
-    width: 100%;
+  footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+
+    nav{
+      text-align: center;
+    }
   }
 
   footer .footer-logo img {
@@ -334,6 +345,91 @@
   .popup-servicios-btn {
     padding: 12px;
     font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-profesionales h3 {
+    font-size: 28px;
+  }
+
+  .carrusel-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+
+  .card-profesional {
+    min-width: 240px;
+  }
+
+  .card-profesional-img {
+    height: 280px;
+  }
+
+  .popup-profesional-overlay.active .popup-profesional-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .popup-profesional-overlay.active .popup-profesional-foto {
+    min-height: 300px;
+    max-height: 350px;
+  }
+
+  .popup-profesional-foto {
+    min-height: 300px;
+    max-height: 350px;
+  }
+
+  /* Popup Talleres - Una sola columna */
+  .popup-overlay.active .contenido-popup {
+    flex-direction: column;
+    width: 90%;
+    height: auto;
+    max-height: 95vh;
+    margin: 20px 5%;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  .popup-overlay.active .popup-img,
+  .popup-overlay.active .popup-info {
+    width: 100%;
+  }
+
+  .popup-overlay.active .popup-img {
+    order: 1;
+  }
+
+  .popup-overlay.active .popup-info {
+    order: 2;
+    max-height: none;
+    padding: 20px 0;
+  }
+
+  .popup-overlay.active .popup-img img {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 20px 20px 0 0;
+  }
+
+  .popup-overlay.active .popup-info p {
+    font-size: 14px;
+  }
+
+
+  .popup-profesional-datos {
+    padding: 25px;
+  }
+
+  .popup-profesional-info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contactos-container{
+    flex-direction: column;
   }
 }
 
@@ -367,6 +463,14 @@
     font-size: 24px;
   }
 
+  .testimonios-container{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: fit-content;
+    justify-content: center;
+  }
+
   .titulo-testimonios {
     font-size: 26px;
   }
@@ -381,46 +485,7 @@
     width: 100%;
     max-width: 500px;
   }
-}
 
-@media (max-width: 768px) {
-  .header-profesionales h3 {
-    font-size: 28px;
-  }
-
-  .carrusel-btn {
-    width: 40px;
-    height: 40px;
-    font-size: 16px;
-  }
-
-  .card-profesional {
-    min-width: 240px;
-  }
-
-  .card-profesional-img {
-    height: 280px;
-  }
-
-  .popup-profesional-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .popup-profesional-foto {
-    min-height: 300px;
-    max-height: 350px;
-  }
-
-  .popup-profesional-datos {
-    padding: 25px;
-  }
-
-  .popup-profesional-info-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 480px) {
   .header-profesionales {
     padding: 40px 20px 30px;
   }
@@ -456,4 +521,10 @@
   .carrusel-indicadores {
     display: none;
   }
+  
+  .footerPopupServicios{
+    display: flex;
+    flex-direction: column;
+  }
+
 }

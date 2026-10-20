@@ -38,6 +38,8 @@ body.no-scroll {
 }
 
 .contenido-popup-servicios {
+  /* display: flex;
+  flex-direction: column; */
   background: #ffff;
   width: 900px;
   max-height: 100vh;
@@ -115,7 +117,7 @@ body.no-scroll {
       background: #eef5f6;
       border-radius: 15px;
       padding: 20px;
-      width: 50%;
+      width: 100%;
 
       h4 {
         color: #2097c2;
@@ -144,7 +146,7 @@ body.no-scroll {
     }
 
     .containerRight {
-      width: 50%;
+      width: 100%;
 
       display: flex;
       flex-direction: column;

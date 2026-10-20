@@ -26,8 +26,6 @@
     .tarjeta-testimonios {
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-    
       position: relative;
       background-color: #ffff;
       border-radius: 20px;
@@ -50,6 +48,15 @@
         font-weight: bold;
       }
       
+      .contenido-tarjeta-testimonio{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 20px;
+        height: 100%;
+        
+      }
+      
       h3{
         font-size: 18px;
       }
@@ -61,13 +68,13 @@
       .texto-testimonio {
         font-size: 15px;
         line-height: 1.5;
-        margin-bottom: 25px;
       }
       
       .usuario {
         display: flex;
         align-items: center;
         gap: 12px;
+        
 
         h3{
           font-size: 14px;
@@ -81,7 +88,6 @@
           color: #c84346;
         }
       }
-      
     }
   }
 }
