@@ -33,83 +33,6 @@
   transform: rotate(-45deg) translate(7px, -7px);
 }
 
-/* RESPONSIVE POPUP TALLERES */
-@media (max-width: 1024px) {
-  .contenido-popup {
-    width: 90%;
-    margin: 20px 5%;
-    height: auto;
-    max-height: 90vh;
-    flex-direction: row;
-    border-radius: 20px;
-  }
-
-  .popup-info {
-    width: 55%;
-    padding: 20px;
-  }
-
-  .popup-info h2 {
-    font-size: 20px;
-    margin: 10px 0;
-  }
-
-  .popup-info p {
-    font-size: 13px;
-  }
-
-  .popup-detalles {
-    margin: 15px 0;
-  }
-
-  .popup-detalles div {
-    padding: 8px;
-    margin-bottom: 8px;
-  }
-
-  .popup-detalles div p {
-    font-size: 12px;
-  }
-
-  .incluye {
-    padding: 10px;
-    margin-top: 8px;
-  }
-
-  .incluye h4 {
-    font-size: 14px;
-    margin-bottom: 8px;
-  }
-
-  .incluye li {
-    font-size: 12px;
-    margin-bottom: 4px;
-  }
-
-  .popup-img {
-    width: 45%;
-    height: auto;
-  }
-
-  .popup-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 0 20px 20px 0;
-  }
-
-  .badge {
-    font-size: 10px;
-    padding: 4px 8px;
-  }
-
-  .cerrar-popup {
-    width: 30px;
-    height: 30px;
-    font-size: 14px;
-  }
-}
-
 @media (max-width: 1024px) {
   .menu-toggle {
     display: flex !important;
@@ -157,21 +80,14 @@
     padding: 10px;
   }
 
-  /* Ocultar botón en móvil por defecto */
-  .btn-action {
-    display: none !important;
+
+  .nav-links .btn-action{
+    display: inline-flex;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
   }
-
-  /* Mostrar botón cuando el menú está activo */
-  .btn-action.active {
-    display: inline-block !important;
-    position: absolute;
-    bottom: 20px;
-    right: 50%;
-    transform: translateX(50%);
-  }
-
-
 
   header {
     padding: 10px 5%;
@@ -215,27 +131,27 @@
     padding: 60px 5%;
   }
 
-  .taller {
+  #talleres .talleres-container .taller {
     grid-template-columns: 1fr;
     gap: 30px;
   }
 
-  .taller-img {
+  #talleres .talleres-container .taller .taller-img {
     width: 100%;
     border-radius: 20px;
   }
 
-  .taller-img img {
+  #talleres .talleres-container .taller .taller-img img {
     width: 100%;
     height: auto;
     object-fit: cover;
   }
 
-  .taller-info {
+  #talleres .talleres-container .taller .taller-info {
     width: 100%;
   }
 
-  .taller.reverse .taller-img {
+  #talleres .talleres-container .taller.reverse .taller-img {
     order: 0;
   }
 
@@ -256,10 +172,15 @@
     text-align: center;
   }
 
-  .imagenes-aboutUs {
-    grid-template-columns: 1fr;
+  #aboutUs .imagenes-aboutUs {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: none;
+  }
+
+  #aboutUs .imagenes-aboutUs img{
     width: 100%;
     max-width: 500px;
+    min-width: 0;
   }
 
   .contenido-aboutUs {
@@ -346,6 +267,67 @@
     padding: 12px;
     font-size: 14px;
   }
+  /* ----- POPUP SERVICIOS - MODAL MOBILE ----- */
+  .popup-servicios-overlay.active .contenido-popup-servicios {
+    width: 95%;
+    margin: 20px 5%;
+    max-height: 95vh;
+    border-radius: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  .popup-servicios-overlay.active .footerPopupServicios {
+    flex-direction: column;
+    gap: 20px;
+    height: auto;
+  }
+
+  .popup-profesional-overlay.active .popup-profesional-contenido{
+    width: 95%;
+    margin: 20px 5%;
+    max-height: 95vh;
+    border-radius: 20px;
+    
+    box-sizing: border-box;
+  }
+  
+  /* Popup Talleres - Una sola columna */
+  .popup-overlay.active .contenido-popup {
+    flex-direction: column;
+    width: 90%;
+    height: auto;
+    max-height: 95vh;
+    margin: 20px 5%;
+    box-sizing: border-box;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+
+  .popup-overlay.active .popup-img,
+  .popup-overlay.active .popup-info {
+    width: 100%;
+    flex-shrink: 0;
+  }
+  
+  .popup-overlay.active .popup-img {
+    order: 1;
+  }
+
+  .popup-overlay.active .popup-info {
+    order: 2;
+    max-height: none;
+    overflow-y: visible;
+    padding: 20px;
+  }
+
+  .popup-overlay.active .popup-img img {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 20px 20px 0 0;
+  }
 }
 
 @media (max-width: 768px) {
@@ -353,10 +335,8 @@
     font-size: 28px;
   }
 
-  .carrusel-btn {
-    width: 40px;
-    height: 40px;
-    font-size: 16px;
+  #profesionales .carrusel-btn {
+    display: none;
   }
 
   .card-profesional {
@@ -367,65 +347,40 @@
     height: 280px;
   }
 
+  .popup-profesional-info-grid {
+    grid-template-columns: 1fr;
+  }
+
+   /* Popup Profesional - Foto circular tipo Instagram en móvil */
   .popup-profesional-overlay.active .popup-profesional-grid {
     grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
   }
 
   .popup-profesional-overlay.active .popup-profesional-foto {
-    min-height: 300px;
-    max-height: 350px;
+    width: 120px;
+    height: 120px;
+    min-height: 120px;
+    max-height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 15px 0;
+    border: 2px solid #ed585e;
   }
 
-  .popup-profesional-foto {
-    min-height: 300px;
-    max-height: 350px;
-  }
-
-  /* Popup Talleres - Una sola columna */
-  .popup-overlay.active .contenido-popup {
-    flex-direction: column;
-    width: 90%;
-    height: auto;
-    max-height: 95vh;
-    margin: 20px 5%;
-    padding: 20px;
-    box-sizing: border-box;
-  }
-
-  .popup-overlay.active .popup-img,
-  .popup-overlay.active .popup-info {
+  .popup-profesional-overlay.active .popup-profesional-foto img {
     width: 100%;
-  }
-
-  .popup-overlay.active .popup-img {
-    order: 1;
-  }
-
-  .popup-overlay.active .popup-info {
-    order: 2;
-    max-height: none;
-    padding: 20px 0;
-  }
-
-  .popup-overlay.active .popup-img img {
-    width: 100%;
-    height: auto;
-    max-height: 300px;
+    height: 100%;
     object-fit: cover;
-    border-radius: 20px 20px 0 0;
+    border-radius: 50%;
   }
 
-  .popup-overlay.active .popup-info p {
-    font-size: 14px;
-  }
-
-
-  .popup-profesional-datos {
-    padding: 25px;
-  }
-
-  .popup-profesional-info-grid {
-    grid-template-columns: 1fr;
+  .popup-profesional-overlay.active .popup-profesional-datos {
+    width: 100%;
+    padding: 0 20px 20px;
+    max-height: none;
+    overflow-y: visible;
   }
 
   .contactos-container{
@@ -479,11 +434,23 @@
     font-size: 26px;
   }
 
-  .imagenes-aboutUs {
-    grid-template-columns: 1fr;
+  #aboutUs .imagenes-aboutUs {
     justify-content: center;
-    width: 100%;
+    grid-template-columns: 1fr;
     max-width: 500px;
+  }
+
+  #aboutUs .imagenes-aboutUs img{
+    width: 100%;
+    max-width: 365px;
+  }
+
+  #aboutUs .imagenes-aboutUs img:first-child{
+    margin-top: 0;
+  }
+
+  #aboutUs .imagenes-aboutUs img:last-child{
+    margin-bottom: 0;
   }
 
   .header-profesionales {
@@ -498,20 +465,16 @@
     font-size: 16px;
   }
 
-  .carrusel-btn {
+  #profesionales .carrusel-btn {
     display: none;
   }
 
-  .card-profesional {
+  #profesionales .card-profesional {
     min-width: 260px;
   }
 
   .card-profesional-img {
     height: 300px;
-  }
-
-  .popup-profesional-datos h2 {
-    font-size: 22px;
   }
 
   .popup-profesional-datos {
@@ -520,11 +483,6 @@
 
   .carrusel-indicadores {
     display: none;
-  }
-  
-  .footerPopupServicios{
-    display: flex;
-    flex-direction: column;
   }
 
 }

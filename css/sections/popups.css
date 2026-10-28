@@ -1,6 +1,13 @@
 /* POPUPS (Servicios, Profesionales y Talleres) */
+html.no-scroll,
 body.no-scroll {
   overflow: hidden !important;
+}
+
+.popup-servicios-overlay.active,
+.popup-profesional-overlay.active,
+.popup-overlay.active {
+  touch-action: none;
 }
 
 /* POPUP SERVICIOS */
@@ -38,29 +45,25 @@ body.no-scroll {
 }
 
 .contenido-popup-servicios {
-  /* display: flex;
-  flex-direction: column; */
   background: #ffff;
   width: 900px;
   max-height: 100vh;
   border-radius: 20px;
   padding: 40px;
   position: relative;
+  
   overflow-y: auto;
+  overscroll-behavior: contain;
 
   transform: scale(0.8);
   opacity: 0;
   transition:
     transform 0.4s ease,
     opacity 0.4s ease;
+  scrollbar-width: none;
 
   &::-webkit-scrollbar {
-    width: 6px;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background: #eef5f6;
-    border-radius: 10px;
+    display: none;
   }
 
   p {
@@ -283,7 +286,14 @@ body.no-scroll {
     transition:
       transform 0.3s ease,
       opacity 0.3s ease;
+    
     overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar{
+      display: none;
+    }
   }
 
   .popup-profesional-grid {
@@ -312,15 +322,13 @@ body.no-scroll {
     .popup-profesional-datos {
       padding: 40px;
       max-height: 90vh;
+      
       overflow-y: auto;
+      overscroll-behavior: contain;
+      scrollbar-width: none;
 
       &::-webkit-scrollbar {
-        width: 6px;
-      }
-
-      &::-webkit-scrollbar-thumb {
-        background: #eef5f6;
-        border-radius: 10px;
+        display: none;
       }
 
       h2 {
@@ -477,20 +485,24 @@ body.no-scroll {
     transition:
       transform 0.4s ease,
       opacity 0.4s ease;
+    scrollbar-width: none;
+    
+    &::-webkit-scrollbar{
+      display: none;
+    }
+
 
     .popup-info {
       padding: 40px;
       width: 60%;
       max-height: 750px;
+      
       overflow-y: auto;
+      overscroll-behavior: contain;
+      scrollbar-width: none;
 
       &::-webkit-scrollbar {
-        width: 6px;
-      }
-
-      &::-webkit-scrollbar-thumb {
-        background: #eef5f6;
-        border-radius: 10px;
+        display: none;
       }
 
       h2 {

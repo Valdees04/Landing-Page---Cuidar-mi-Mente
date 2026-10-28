@@ -19,7 +19,7 @@
   
   .testimonios-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(470px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
     margin-top: 20px;
     
@@ -29,9 +29,7 @@
       position: relative;
       background-color: #ffff;
       border-radius: 20px;
-      max-height: 310px;
       padding: 30px 35px;
-      flex-shrink: 0;
       box-shadow: 0 10px 30px rgba(116, 116, 116, 0.1);
 
       &:hover{

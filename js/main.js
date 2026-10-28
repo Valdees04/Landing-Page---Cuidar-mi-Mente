@@ -13,7 +13,6 @@ if (menuToggle && navLinks) {
     menuToggle.addEventListener("click", () => {
         menuToggle.classList.toggle("active");
         navLinks.classList.toggle("active");
-        document.querySelector('.btn-action').classList.toggle('active');
     });
 
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
@@ -34,7 +33,7 @@ if (menuToggle && navLinks) {
           const startPosition = window.pageYOffset;
           const distance = targetPosition - startPosition;
           let startTime = null;
-          const duration = 800; // Duración en milisegundos (0.8 segundos)
+          const duration = 800;
 
           function animation(currentTime) {
             if (startTime === null) startTime = currentTime;
@@ -112,18 +111,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
       popupServicios.classList.add("active");
       document.body.classList.add("no-scroll");
+      document.documentElement.classList.add("no-scroll");
     });
   });
 
   cerrarServicios.addEventListener("click", () => {
     popupServicios.classList.remove("active");
     document.body.classList.remove("no-scroll");
+    document.documentElement.classList.remove("no-scroll");
   });
 
   popupServicios.addEventListener("click", (e) => {
     if (e.target === popupServicios) {
       popupServicios.classList.remove("active");
       document.body.classList.remove("no-scroll");
+      document.documentElement.classList.remove("no-scroll");
     }
   });
 
@@ -161,6 +163,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
           popupTaller.classList.add("active");
           document.body.classList.add("no-scroll");
+          document.documentElement.classList.add("no-scroll");
         }
       });
     });
@@ -168,12 +171,14 @@ document.addEventListener("DOMContentLoaded", () => {
     cerrarTaller.addEventListener("click", () => {
       popupTaller.classList.remove("active");
       document.body.classList.remove("no-scroll");
+      document.documentElement.classList.remove("no-scroll");
     });
 
     popupTaller.addEventListener("click", (e) => {
       if (e.target === popupTaller) {
         popupTaller.classList.remove("active");
         document.body.classList.remove("no-scroll");
+        document.documentElement.classList.remove("no-scroll");
       }
     });
   }
@@ -188,24 +193,95 @@ const track = document.querySelector(".carrusel-track");
 const cards = document.querySelectorAll(".card-profesional");
 const prevBtn = document.querySelector(".prev-btn");
 const nextBtn = document.querySelector(".next-btn");
-const indicadores = document.querySelectorAll(".indicador");
+const indicadoresContainer = document.querySelector(".carrusel-indicadores");
 const popupProfesional = document.getElementById("popupProfesional");
 const cerrarPopupProfesional = document.getElementById("cerrarPopupProfesional");
 
 let tarjetaIndex = 0;
-const cardsVisible = 3;
+let cardWidth = 280;
+let gap = 30;
+let cardsVisible = 3;
 const totalCards = cards.length;
+
+function generarIndicadores(){
+  indicadoresContainer.innerHTML = ""
+
+  for(let i = 0; i < totalCards; i ++){
+    const span = document.createElement("span")
+    span.classList.add("indicador")
+
+    if(i === 0) span.classList.add("active")
+    indicadoresContainer.appendChild(span)
+  }
+}
+
+generarIndicadores()
+
+function actualizarConfigCarrusel() {
+  const container = document.querySelector('.carrusel-container');
+  const firstCard = document.querySelector('.card-profesional');
+  const trackEl = document.querySelector('.carrusel-track');
+
+  if (!container || !firstCard || !trackEl) return;
+
+  // Leer el ancho REAL de la tarjeta desde el DOM
+  cardWidth = firstCard.getBoundingClientRect().width;
+
+  // Leer el gap REAL desde el CSS computado
+  const trackStyle = window.getComputedStyle(trackEl);
+  gap = parseInt(trackStyle.gap) || 24;
+
+  // Calcular cuántas tarjetas caben realmente
+  const availableWidth = container.clientWidth;
+  cardsVisible = Math.max(1, Math.floor((availableWidth + gap) / (cardWidth + gap)));
+
+  updateCarrusel();
+}
 
 function updateCarrusel() {
   if (!track) return;
-  const cardWidth = 280;
-  const gap = 30;
   const offset = -(tarjetaIndex * (cardWidth + gap));
 
   track.style.transform = `translateX(${offset}px)`;
 
-  indicadores.forEach((ind, i) => {
-    ind.classList.toggle("active", i === Math.floor(tarjetaIndex / cardsVisible));
+  const todosIndicadores = document.querySelectorAll(".indicador");
+  todosIndicadores.forEach((ind, i) => {
+    ind.classList.toggle("active", i === tarjetaIndex);
+  });
+}
+
+// SWIPE TÁCTIL - Navegación por deslizar el dedo en móvil
+const carruselContainer = document.querySelector(".carrusel-container");
+let touchStartX = 0;
+let touchCurrentX = 0;
+let isDragging = false;
+
+if (carruselContainer) {
+  carruselContainer.addEventListener("touchstart", (e) => {
+    touchStartX = e.touches[0].clientX;
+    isDragging = true;
+  }, { passive: true });
+
+  carruselContainer.addEventListener("touchmove", (e) => {
+    if (!isDragging) return;
+    touchCurrentX = e.touches[0].clientX;
+    const diff = touchCurrentX - touchStartX;
+    const offset = -(tarjetaIndex * (cardWidth + gap)) + diff;
+    track.style.transform = `translateX(${offset}px)`;
+  }, { passive: true });
+
+  carruselContainer.addEventListener("touchend", () => {
+    if (!isDragging) return;
+    isDragging = false;
+    const diff = touchCurrentX - touchStartX;
+    const threshold = cardWidth / 2;
+
+    if (diff < -threshold && tarjetaIndex < totalCards - cardsVisible) {
+      tarjetaIndex++;
+    } else if (diff > threshold && tarjetaIndex > 0) {
+      tarjetaIndex--;
+    }
+    updateCarrusel();
   });
 }
 
@@ -246,6 +322,7 @@ cards.forEach((card) => {
 
       popupProfesional.classList.add("active");
       document.body.classList.add("no-scroll");
+      document.documentElement.classList.add("no-scroll");
     }
   });
 });
@@ -253,12 +330,14 @@ cards.forEach((card) => {
 cerrarPopupProfesional.addEventListener("click", () => {
   popupProfesional.classList.remove("active");
   document.body.classList.remove("no-scroll");
+  document.documentElement.classList.remove("no-scroll");
 });
 
 popupProfesional.addEventListener("click", (e) => {
   if (e.target === popupProfesional) {
     popupProfesional.classList.remove("active");
     document.body.classList.remove("no-scroll");
+    document.documentElement.classList.remove("no-scroll");
   }
 });
 
@@ -303,3 +382,7 @@ highlightNav();
 
 // Ejecutar en cada movimiento del scroll
 window.addEventListener("scroll", highlightNav);
+
+// Inicializar carrusel con configuración dinámica según ancho de ventana
+window.addEventListener("resize", actualizarConfigCarrusel);
+actualizarConfigCarrusel();
