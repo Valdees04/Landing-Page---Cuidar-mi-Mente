@@ -94,20 +94,4 @@ const profesionalesData = [
     agendarCita:
       "https://api.whatsapp.com/send?phone=+57 318-165-0596&text=Hola, me gustaría agendar sesión con Marcela Tamayo.",
   },
-  {
-    id: 7,
-    nombre: "Laura Guevara",
-    cargo: "Psicóloga",
-    foto: "img/profesionales/foto-laura.jpeg",
-    experiencia: "3 años de experiencia",
-    publico: "Adolescentes, Adultos y parejas",
-    especialidades:
-      "Manejo de procesos relacionados con ansiedad, depresión, dependencia emocional, ruptura de pareja, desarrollo personal, comunicación asertiva, y manejo de emociones.",
-    enfoque:
-      "Manejo el enfoque cognitivo conductual basado en la evidencia. Trabajaremos en equipo para que logres tus metas y un mejor bienestar.",
-    prioridad:
-      "Mi prioridad es brindarte un espacio de escucha activa, cálido y libre de juicios. Junt@s identificaremos aquello que te genera malestar y trabajaremos en herramientas prácticas para tu día a día.",
-    agendarCita:
-      "https://api.whatsapp.com/send?phone=+57 318-165-0596&text=Hola, me gustaría agendar sesión con Laura Guevara.",
-  },
 ];
