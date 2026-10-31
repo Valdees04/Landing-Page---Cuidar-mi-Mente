@@ -1,0 +1,58 @@
+const emocionesData = [
+  {
+    nombre: "Alegría",
+    color: "#f4d03f",
+    emoji: "😄",
+    colorTexto: "#3f484f",
+    info: "Sensación de satisfacción y bienestar ante situaciones positivas.",
+  },
+  {
+    nombre: "Tristeza",
+    color: "#5dade2",
+    emoji: "😢",
+    colorTexto: "#ffffff",
+    info: "Respuesta natural ante pérdidas o momentos difíciles.",
+  },
+  {
+    nombre: "Rabia",
+    color: "#ec7063",
+    emoji: "😠",
+    colorTexto: "#ffffff",
+    info: "Emoción que surge ante situaciones injustas o amenazantes.",
+  },
+  {
+    nombre: "Temor",
+    color: "#85929e",
+    emoji: "😨",
+    colorTexto: "#ffffff",
+    info: "Señal de alerta ante una posible amenaza o peligro.",
+  },
+  {
+    nombre: "Ansiedad",
+    color: "#af7ac5",
+    emoji: "😰",
+    colorTexto: "#ffffff",
+    info: "Preocupación anticipatoria ante un futuro incierto.",
+  },
+  {
+    nombre: "Vergüenza",
+    color: "#dc7633",
+    emoji: "😳",
+    colorTexto: "#ffffff",
+    info: "Evaluación negativa de uno mismo ante una situación.",
+  },
+  {
+    nombre: "Sorpresa",
+    color: "#48c9b0",
+    emoji: "😲",
+    colorTexto: "#3f484f",
+    info: "Reacción ante un evento inesperado que nos desborda.",
+  },
+  {
+    nombre: "Calma",
+    color: "#52be80",
+    emoji: "😌",
+    colorTexto: "#3f484f",
+    info: "Estado de tranquilidad y equilibrio interior.",
+  },
+];

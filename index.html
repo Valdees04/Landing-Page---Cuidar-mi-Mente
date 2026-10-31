@@ -26,6 +26,11 @@
     />
     <link rel="stylesheet" href="css/styles.css" />
   </head>
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="./data/emociones.js"></script>
+    <script src="./js/ruleta.js"></script>
+
   <body>
     <!-- BOTON WHATSAPP -->
     <a
@@ -94,12 +99,12 @@
         </p>
 
         <div class="botones-inicio">
-          <a href="#contactanos" class="btn-action">Agendar cita</a>
+          <a href="#contactanos" class="btn-action">Contáctanos</a>
           <a href="#nuestros-servicios" class="btn-action">Ver servicios</a>
         </div>
       </div>
 
-      <div class="imagen-container">
+      <!-- <div class="imagen-container">
         <img src="img/imagen-inicio-4.png" />
         <div class="carta-flotante">
           <div class="icono-inicio">❤️</div>
@@ -108,7 +113,15 @@
             <span>100% Personalizada</span>
           </div>
         </div>
+      </div> -->
+      <div class="ruleta-container">
+        <div id="ruleta-emociones"></div>
+        <div class="ruleta-info" id="ruletaInfo">
+          <h4 id="ruletaTitulo">¡Explora tus emociones!</h4>
+          <p id="ruletaDesc">Pasa el cursor (o toca) cada sección para descubrir qué emoción representa</p>
+        </div>
       </div>
+
     </section>
 
     <!-- SOBRE NOSOTROS -->

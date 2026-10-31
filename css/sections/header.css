@@ -37,6 +37,12 @@ header {
     font-weight: 700;
   }
 
+  nav{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+
   .nav-links {
     list-style: none;
 

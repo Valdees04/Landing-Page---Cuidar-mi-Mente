@@ -122,9 +122,16 @@
     font-size: 32px;
   }
 
-  .imagen-container img {
-    width: 100%;
-    max-width: 400px;
+  .ruleta-container{
+    flex-direction: column;
+  }
+
+  .ruleta-info{
+    order: 0;
+  }
+
+  #ruleta-emociones svg{
+    max-width: 420px;
   }
 
   #talleres {
@@ -412,6 +419,22 @@
 
   .titulo-inicio {
     font-size: 26px;
+  }
+
+  #ruleta-emociones svg {
+    max-width: 360px;
+  }
+
+  .ruleta-info {
+    padding: 15px 18px;
+
+    h4 {
+      font-size: 18px;
+    }
+
+    p {
+      font-size: 14px;
+    }
   }
 
   .titulo-aboutUs {
