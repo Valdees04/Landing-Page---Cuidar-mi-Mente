@@ -30,10 +30,10 @@
       box-shadow: 0 10px 30px rgba(116, 116, 116, 0.1);
 
       &:hover{
-        background-color: #ebe4e4;
+        background-color: #FDF2F2;
         color: #000000;
-        transition: 0.4s;
-        border: 2px solid rgb(255, 255, 255);
+        transition: 0.3s;
+        border: 2px solid #FCE1E2;
 
         button{
           background: linear-gradient(to right, #c84346, #ed585e);
@@ -41,7 +41,7 @@
         }
         
         svg{
-          background-color: #ffdad7;
+          background-color: #FCE1E2;
           color: #ed585e;
         }
       }

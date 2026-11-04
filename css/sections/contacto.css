@@ -38,6 +38,7 @@
       .tarjeta-contacto {
         display: flex;
         background-color: #ffff;
+        border: 2px solid #F7A6A8;
         border-radius: 20px;
         width: 300px;
         padding: 10px;
@@ -45,12 +46,19 @@
         justify-content: center;
         align-items: center;
         text-align: center;
-        box-shadow: 0 10px 30px rgba(116, 116, 116, 0.1);
+        box-shadow: 0 10px 30px rgba(116, 116, 116, 0.15);
 
         &:hover {
+          border: 2px solid #2b90c1;
           cursor: pointer;
           transform: translateY(-6px);
           transition: 0.4s;
+
+          svg {
+            background-color: #d6edf5;
+            color: #2b90c1;
+            transition: 0.4s;
+          }
         }
 
         a {
@@ -74,27 +82,26 @@
             margin-bottom: 15px;
 
             .titulo-contacto {
-              color: #2097c2;
+              color: #000000;
               font-size: 18px;
             }
           }
 
-          p{
+          p {
             font-size: 18px;
           }
         }
       }
     }
   }
-  
+
   .imagen-contactanos {
     margin-left: 20px;
 
-    img{
+    img {
       width: 550px;
       height: 100%;
       border-radius: 20px;
     }
   }
 }
-
