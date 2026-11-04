@@ -386,3 +386,30 @@ window.addEventListener("scroll", highlightNav);
 // Inicializar carrusel con configuración dinámica según ancho de ventana
 window.addEventListener("resize", actualizarConfigCarrusel);
 actualizarConfigCarrusel();
+
+// ==========================================
+// PREGUNTAS FRECUENTES - CUADROS DESPLEGABLES
+// ==========================================
+document.querySelectorAll(".faq-pregunta").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const item = btn.parentElement;
+    const respuesta = item.querySelector(".faq-respuesta");
+    const estaAbierta = item.classList.contains("active");
+
+    if (estaAbierta) {
+      item.classList.remove("active");
+      respuesta.style.maxHeight = null;
+      btn.setAttribute("aria-expanded", "false");
+    } else {
+
+      document.querySelectorAll(".faq-item.active").forEach((itemActivo) => {
+        itemActivo.classList.remove("active")
+        itemActivo.querySelector(".faq-respuesta").style.maxHeight = null
+        itemActivo.querySelector(".faq-pregunta").setAttribute("aria-expanded", "false")
+      })
+      item.classList.add("active");
+      respuesta.style.maxHeight = respuesta.scrollHeight + "px";
+      btn.setAttribute("aria-expanded", "true");
+    }
+  });
+});

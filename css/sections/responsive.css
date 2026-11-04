@@ -393,6 +393,19 @@
   .contactos-container{
     flex-direction: column;
   }
+
+  .header-preguntas h3 {
+    font-size: 28px;
+  }
+
+  .header-preguntas .desc-preguntas {
+    font-size: 16px;
+  }
+
+  .faq-pregunta {
+    font-size: 15.5px;
+    padding: 16px 18px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -506,4 +519,21 @@
     display: none;
   }
 
+  .header-preguntas h3 {
+    font-size: 24px;
+  }
+
+  .header-preguntas .desc-preguntas {
+    font-size: 15px;
+  }
+
+  .faq-pregunta {
+    font-size: 15px;
+    padding: 15px 16px;
+  }
+
+  .faq-respuesta p {
+    padding: 0 16px 18px;
+    font-size: 14.5px;
+  }
 }
