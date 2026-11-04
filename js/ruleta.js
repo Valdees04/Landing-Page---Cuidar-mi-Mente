@@ -19,10 +19,13 @@ document.addEventListener("DOMContentLoaded", () => {
     .arc()
     .innerRadius(0)
     .outerRadius(radius - 10);
+
   const arcExpanded = d3
     .arc()
     .innerRadius(0)
     .outerRadius(radius + 8);
+  
+  let sliceActiva = null;
 
   svg
     .selectAll("path")
@@ -37,11 +40,12 @@ document.addEventListener("DOMContentLoaded", () => {
     .on("mouseover", function (event, d) {
       d3.select(this).transition().duration(200).attr("d", arcExpanded);
 
-      document.getElementById("ruletaTitulo").textContent = `${d.data.emoji} ${d.data.nombre}`;
+      document.getElementById("ruletaTitulo").innerHTML = `<img src="${d.data.imagen}" alt=""> ${d.data.nombre}`;
       document.getElementById("ruletaDesc").textContent = d.data.info;
     })
     .on("mouseout", function () {
       d3.select(this).transition().duration(200).attr("d", arcNormal);
+      sliceActiva = null;
 
       document.getElementById("ruletaTitulo").textContent = "Explora tus emociones";
       document.getElementById("ruletaDesc").textContent =
@@ -49,30 +53,43 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     .on("touchstart", function (event, d) {
       event.preventDefault();
+
+      if(sliceActiva && sliceActiva !== this){
+        d3.select(sliceActiva).transition().duration(200).attr("d", arcNormal);
+      }
+      sliceActiva = this;
+
       d3.select(this).transition().duration(200).attr("d", arcExpanded);
-      document.getElementById("ruletaTitulo").textContent = `${d.data.emoji} ${d.data.nombre}`;
+      document.getElementById("ruletaTitulo").innerHTML = `<img src="${d.data.imagen}" alt=""> ${d.data.nombre}`;
       document.getElementById("ruletaDesc").textContent = d.data.info;
     });
 
   const datos = pie(emocionesData);
 
-  //Emoji en el centro de la rebanada (sin rotar)
+  //emoción en el centro de la rebanada
   svg
-    .selectAll("text.emoji-slice")
+    .selectAll("image.emoji-slice")
     .data(datos)
     .enter()
-    .append("text")
+    .append("image")
     .attr("class", "emoji-slice")
+    .attr("href", (d) => d.data.imagen)
+    .attr("width", 70)
+    .attr("height", 70)
+    .attr("x", -35)
+    .attr("y", -35)
+    .attr("preserveAspectRatio", "xMidYMid meet")
     .style("pointer-events", "none")
-    .style("font-size", "34px")
-    .attr("text-anchor", "middle")
-    .attr("dy", "0.35em")
     .attr("transform", (d) => {
       const midAngle = (d.startAngle + d.endAngle) / 2;
-      const radio = (radius - 10) * 0.52; // centro de la rebanada
-      return `translate(${Math.sin(midAngle) * radio},${-Math.cos(midAngle) * radio})`;
+      const radio = (radius - 10) * 0.52;
+      const x = Math.sin(midAngle) * radio;
+      const y = -Math.cos(midAngle) * radio;
+      const angulo = (midAngle * 180) / Math.PI;
+      // Flip: si la cara quedaría boca abajo, gira 180° extra
+      const flip = angulo > 90 && angulo < 270 ? 180 : 0;
+      return `translate(${x},${y}) rotate(${angulo + flip})`;
     })
-    .text((d) => d.data.emoji);
 
   //Nombre cerca del borde, girado tangencialmente
   svg
@@ -93,7 +110,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const x = Math.sin(midAngle) * radio;
       const y = -Math.cos(midAngle) * radio;
       const angulo = (midAngle * 180) / Math.PI;
-      return `translate(${x},${y}) rotate(${angulo})`;
+      const flip = angulo > 90 && angulo < 270 ? 180 : 0;
+      return `translate(${x},${y}) rotate(${angulo + flip})`;
     })
     .text((d) => d.data.nombre);
 });

@@ -109,7 +109,7 @@
 
   #inicio {
     padding: 100px 5% 40px;
-    flex-direction: column-reverse;
+    flex-direction: column;
     gap: 20px;
   }
 
@@ -173,7 +173,7 @@
   }
 
   #aboutUs {
-    flex-direction: column;
+    flex-direction: column-reverse;
     padding: 60px 5%;
     gap: 30px;
     text-align: center;
@@ -400,9 +400,7 @@
     flex-wrap: wrap;
   }
 
-  header .header-logo h1 {
-    display: none;
-  }
+  
 
   header .header-logo img {
     height: 40px;

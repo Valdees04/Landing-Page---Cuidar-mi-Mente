@@ -20,6 +20,7 @@ header {
     align-items: center;
     gap: 20px;
     cursor: pointer;
+    text-decoration: none;
 
     img {
       height: 80px;
